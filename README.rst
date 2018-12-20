@@ -1,6 +1,6 @@
-======================
-Python Package Starter
-======================
+=========
+PyPiStart
+=========
 
 Do you ever get tired of creating the same basic python project skeleton every
 time you have a cool new idea? Or maybe this is your first project and you want
