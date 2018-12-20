@@ -1,6 +1,4 @@
-=========
-PyPiStart
-=========
+# PyPiStart
 
 Do you ever get tired of creating the same basic python project skeleton every
 time you have a cool new idea? Or maybe this is your first project and you want
@@ -15,9 +13,7 @@ described below and start developing now!
 Python project layout is modeled on this excellent guide:
 https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html
 
-
-Python Environment Setup
-========================
+## Python Environment Setup
 
 First, make sure you have Python 3.6+ installed.
 

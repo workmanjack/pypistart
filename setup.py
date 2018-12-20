@@ -1,15 +1,14 @@
 from distutils.core import setup
 
 setup(
-    name='python_package_starter',
+    name='pypistart',
     version='0.1.0',
+    description='Starter kit for initializing a python package skeleton',
+    long_description=open('README').read(),
     author='Jack Workman',
-    author_email='jackcworkman@gmail.com',
-    packages=['python_package_starter', 'python_package_starter.test'],
-    scripts=[],
-    #url='http://pypi.python.org/pypi/TowelStuff/',
-    license='LICENSE',
-    description='tbd',
-    long_description=open('README.txt').read(),
-    install_requires=[],
+    author_email='jworkman16@gmail.com',
+    url='http://pypi.python.org/pypi/pypistart/',
+    packages=['pypistart', 'pypistart.tests'],
+    #scripts=[],  # TODO -- make script for creating pypi package skeleton
+    license='MIT'
 )
