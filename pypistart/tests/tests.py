@@ -4,6 +4,7 @@ from pypistart import PyPiStarter, TEMPLATES_DIR
 
 # python packages
 import unittest
+import shutil
 import os
 
 
@@ -57,29 +58,29 @@ class TestPyPackageStarter(unittest.TestCase):
     def test__init_package_dir(self):
         parent_dir = 'test__init_package_dir'
         package_name = 'package_test__init_package_dir'
+        package_dir = os.path.join(parent_dir, package_name)
         self.Starter._init_package_dir(parent_dir, package_name)
         self.assertTrue(os.path.isdir(parent_dir))
-        self.assertTrue(os.path.isfile(os.path.join(parent_dir, '__init__.py')))
-        self.assertTrue(os.path.isfile(os.path.join(parent_dir, '{}.py'.format(package_name))))
-        os.rmdir(package_name)
+        self.assertTrue(os.path.isfile(os.path.join(package_dir, '__init__.py')))
+        self.assertTrue(os.path.isfile(os.path.join(package_dir, '{}.py'.format(package_name))))
+        shutil.rmtree(parent_dir)
 
     def test__get_rendered_template(self):
-        # find template directory
-        template = os.path.join(TEMPLATES_DIR, 'license.txt')
-        # now do the test
+        template = 'license.txt'
         expected_contents = None
-        with open(template, 'r') as f:
+        with open(os.path.join(TEMPLATES_DIR, template), 'r') as f:
             expected_contents = f.read()
         actual_contents = self.Starter._get_rendered_template(template)
-        self.assertEquals(expected_contents, actual_contents)
+        self.assertEqual(expected_contents, actual_contents)
 
     def test__readme(self):
         """
         Just testing to see if it returns content and that the args are plugged into
         the template somewhere
         """
-        actual_contents = self.Starter._readme(template)
+        actual_contents = self.Starter._readme()
         self.assertTrue(len(actual_contents) > 0)
+        print(actual_contents)
         self.assertTrue(self.package_name in actual_contents)
 
     def test__setup(self):
@@ -116,4 +117,4 @@ class TestPyPackageStarter(unittest.TestCase):
         self.assertTrue(os.path.isdir(test_dir))
         self.assertTrue(os.path.isfile(os.path.join(test_dir, '__init__.py')))
         self.assertTrue(os.path.isfile(os.path.join(test_dir, 'tests.py')))
-        os.rmdir(self.package_name)
+        shutil.rmtree(self.package_root)

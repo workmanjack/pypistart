@@ -3,7 +3,6 @@ import os
 
 
 TEMPLATES_DIR = os.path.abspath('templates')
-print(TEMPLATES_DIR)
 
 
 class PyPiStarter(object):
@@ -38,11 +37,14 @@ class PyPiStarter(object):
     def _get_rendered_template(self, template):
         template = self.env.get_template(template)
         contents = template.render()
+        if contents:
+            # jinja2 removes leading and ending whitespace; we want a \n at the end because it is pretty
+            contents += '\n'
         return contents
 
     def _readme(self):
         template = self.env.get_template('readme.txt')
-        contents = template.render(name=self.package_name)
+        contents = template.render(package_name=self.package_name)
         return contents
 
     def _setup(self):
