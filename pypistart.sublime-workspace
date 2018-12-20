@@ -538,12 +538,14 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/jcworkma/Documents/personal/projects/python-package-starter"
+		"/C/Users/jcworkma/Documents/personal/projects/pypistart"
 	],
 	"file_history":
 	[
-		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/compare-taskmls/compare_taskmls/tests/__init__.py",
-		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/compare-taskmls/compare_taskmls/__init__.py",
+		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/triages/18ww51/taskml_emu_tgllp_tp-93205_model-ww48p3-1703b4_driver-800.txt",
+		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/triages/18ww51/taskml_emu_dg1_ci-enabling_model-18ww51b_driver-957.txt",
+		"/C/Users/jcworkma/personal.bat",
+		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/gta_data_mining/tests/tests_lib.py",
 		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/uv_hsd.txt",
 		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/gta_data_mining/.gitignore",
 		"/C/Users/jcworkma/Syncplicity Folders/intel/gta/gta_data_mining/gta_data_mining/gta_results_api.py",
@@ -667,9 +669,7 @@
 		"/S/jcworkma/tests_gsim/gsimsrc/scripts/setup.bat",
 		"/C/Users/jcworkma/vpg_graphics_architecture_tools-gsimsrc/scripts/setup.sh",
 		"/C/Users/jcworkma/Syncplicity Folders/intel/vpg_graphics_architecture_tools-gsimsrc/scripts/setup.sh",
-		"/C/Users/jcworkma/Syncplicity Folders/intel/vpg_graphics_architecture_tools-gsimsrc/scripts/setup.ini",
-		"/C/Users/jcworkma/Syncplicity Folders/intel/vpg_graphics_architecture_tools-gsimsrc/scripts/setup.bat",
-		"/S/jcworkma/gen_stats_correlation/gen_stats_correlation/gsim_run_output_parser/level_output/data/statistics_json.py"
+		"/C/Users/jcworkma/Syncplicity Folders/intel/vpg_graphics_architecture_tools-gsimsrc/scripts/setup.ini"
 	],
 	"find":
 	{
@@ -757,7 +757,7 @@
 		"height": 98.0
 	},
 	"pinned_build_system": "Packages/User/Python_RUN.sublime-build",
-	"project": "python-package-starter.sublime-project",
+	"project": "pypistart.sublime-project",
 	"replace":
 	{
 		"height": 44.0

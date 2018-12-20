@@ -6,15 +6,15 @@ TEMPLATES_DIR = os.path.abspath('templates')
 print(TEMPLATES_DIR)
 
 
-class PyPackageStarter(object):
+class PyPiStarter(object):
 
-    def __init__(self, package_name, location, author_name, author_email):
+    def __init__(self, package_name, package_root, author_name, author_email):
         self.package_name = package_name
-        self.location = location
+        self.package_root = package_root
         self.author_name = author_name
         self.author_email = author_email
         self.env = Environment(
-            loader=PackageLoader('python_package_starter', TEMPLATES_DIR),
+            loader=PackageLoader('pypistart', TEMPLATES_DIR),
             autoescape=select_autoescape(['html', 'xml']),
         )
         return
@@ -56,7 +56,7 @@ class PyPackageStarter(object):
 
     def start(self):
         # make sure the dest dir exists
-        os.makedirs(self.location, exist_ok=True)
+        os.makedirs(self.package_root, exist_ok=True)
         # do the simple files (template, dest)
         simple_files = [
             ('license.txt', 'LICENSE'),
@@ -66,7 +66,7 @@ class PyPackageStarter(object):
         ]
         for template, dest in simple_files:
             contents = self._get_rendered_template(template)
-            self._write_file(contents, os.path.join(self.location, dest))
+            self._write_file(contents, os.path.join(self.package_root, dest))
         # do the customizable files
         customizable_files = [
             (self._readme, 'README.txt'),
@@ -74,15 +74,15 @@ class PyPackageStarter(object):
         ]
         for file_func, dest in customizable_files:
             contents = file_func()
-            self._write_file(contents, os.path.join(self.location, dest))
+            self._write_file(contents, os.path.join(self.package_root, dest))
         # do the src dir
-        src_dir = self._init_package_dir(self.location, self.package_name)
+        src_dir = self._init_package_dir(self.package_root, self.package_name)
         # do the tests dir
         tests_dir = self._init_package_dir(src_dir, 'tests')
         return
 
     def __repr__(self):
-        return '<Package(name={})>'.format(self.package_name)
+        return '<PyPiStarter(name={})>'.format(self.package_name)
 
 
 def parse_args():
@@ -106,7 +106,7 @@ def main():
 
     PackageStarter = PyPackageStarter(
         package_name=args.package_name,
-        location=args.output_dir,
+        package_root=args.output_dir,
         author_name=author_name,
         author_emai=author_emai
     )

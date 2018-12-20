@@ -1,5 +1,5 @@
 # project files
-from python_package_starter import PyPackageStarter, TEMPLATES_DIR
+from pypistart import PyPiStarter, TEMPLATES_DIR
 
 
 # python packages
@@ -11,12 +11,12 @@ class TestPyPackageStarter(unittest.TestCase):
 
     def setUp(self):
         self.package_name = 'beggars-canyon'
-        self.location = 'tatooine'
+        self.package_root = 'tatooine'
         self.author_name = 'luke skywalker'
         self.author_email = 'luke.skywalker@rebelalliance.net'
-        self.Starter = PyPackageStarter(
+        self.Starter = PyPiStarter(
             package_name=self.package_name,
-            location=self.location,
+            package_root=self.package_root,
             author_name=self.author_name,
             author_email=self.author_email
         )
@@ -27,7 +27,7 @@ class TestPyPackageStarter(unittest.TestCase):
 
     def test___init__(self):
         self.assertEqual(self.package_name, self.Starter.package_name)
-        self.assertEqual(self.location, self.Starter.location)
+        self.assertEqual(self.package_root, self.Starter.package_root)
         self.assertEqual(self.author_name, self.Starter.author_name)
         self.assertEqual(self.author_email, self.Starter.author_email)
 
@@ -102,12 +102,12 @@ class TestPyPackageStarter(unittest.TestCase):
         """
         self.Starter.start()
         # meta
-        self.assertTrue(os.path.isfile(os.path.join(self.location, 'LICENSE')))
-        self.assertTrue(os.path.isfile(os.path.join(self.location, 'MANIFEST.in')))
-        self.assertTrue(os.path.isfile(os.path.join(self.location, 'CHANGES.txt')))
-        self.assertTrue(os.path.isfile(os.path.join(self.location, '.gitignore')))
+        self.assertTrue(os.path.isfile(os.path.join(self.package_root, 'LICENSE')))
+        self.assertTrue(os.path.isfile(os.path.join(self.package_root, 'MANIFEST.in')))
+        self.assertTrue(os.path.isfile(os.path.join(self.package_root, 'CHANGES.txt')))
+        self.assertTrue(os.path.isfile(os.path.join(self.package_root, '.gitignore')))
         # package
-        package_dir = os.path.join(self.location, self.package_name)
+        package_dir = os.path.join(self.package_root, self.package_name)
         self.assertTrue(os.path.isdir(package_dir))
         self.assertTrue(os.path.isfile(os.path.join(package_dir, '__init__.py')))
         self.assertTrue(os.path.isfile(os.path.join(package_dir, '{}.py'.format(self.package_name))))
