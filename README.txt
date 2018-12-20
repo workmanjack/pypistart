@@ -15,24 +15,15 @@ described below and start developing now!
 Python project layout is modeled on this excellent guide:
 https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html
 
-A Section
-=========
 
-Lists look like this:
+Python Environment Setup
+========================
 
-* First
+First, make sure you have Python 3.6+ installed.
 
-* Second. Can be multiple lines
-  but must be indented properly.
+Then, run through the following commands:
 
-A Sub-Section
--------------
-
-Numbered lists look like you'd expect:
-
-1. hi there
-
-2. must be going
-
-Urls are http://like.this and links can be
-written `like this <http://www.example.com/foo/bar>`_.
+* `python -m venv .venv_w266_project`
+* Windows: `.venv_w266_project\Scripts\activate.bat`
+* Linux: `source .venv_w266_project/bin/activate`
+* `pip install -r requirements.txt` - this will install all required packages and might take several minutes

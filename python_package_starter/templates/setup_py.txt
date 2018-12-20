@@ -1,0 +1,15 @@
+from distutils.core import setup
+
+setup(
+    name='{{package_name}}',
+    version='0.1.0',
+    author='{{author_name}}',
+    author_email='{{author_email}}',
+    packages=['{{package_name}}', '{{package_name}}.tests'],
+    scripts=[],
+    #url='http://pypi.python.org/pypi/{{package_name}}/',
+    license='LICENSE',
+    description='tbd',
+    long_description=open('README.txt').read(),
+    install_requires=[],
+)
