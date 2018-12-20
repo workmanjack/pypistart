@@ -4,7 +4,7 @@ setup(
     name='pypistart',
     version='0.1.0',
     description='Starter kit for initializing a python package skeleton',
-    long_description=open('README').read(),
+    long_description=open('README.md').read(),
     author='Jack Workman',
     author_email='jworkman16@gmail.com',
     url='http://pypi.python.org/pypi/pypistart/',
