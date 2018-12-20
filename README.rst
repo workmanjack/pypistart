@@ -8,7 +8,7 @@ to do it the right way but are feeling overwhelmed by all the little details no
 one ever told you about?
 
 Well do I have news for you! Regardless of whether or
-not this is your 1st, 9th, or 100th python package, the Python Package Starter
+not this is your 1st, 9th, or 100th python package, PyPiStart, the python package starter,
 is here to make your life easier! Simply download and use the package as
 described below and start developing now!
 
